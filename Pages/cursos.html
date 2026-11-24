@@ -5,11 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
         <title>EduTech - Formação em Tecnologia</title>
         <link rel="stylesheet" href="../CSS/style.css">
-        <style>
-            .images {
-                ;
-            }
-        </style>
     </head>
     <body> <!-- CORPO DO SITE - CONTEÚDO VISÍVEL -->
         
@@ -26,36 +21,26 @@
         </header>
         
         <!-- CONTEÚDO DA PÁGINA DO SITE -->
-        <main>
-            <section>
-                <h2>Nossos Cursos</h2>
-                    <article class="curso">
-                        <h3>Desenvolvimento Web</h3>
-                        <img src="../Images/DesenvolvimentoWeb.png" alt="Desenvolvimento Web">
-                        <p>Aprenda HTML, CSS, JS e práticas modernas de desenvolvimento web.</p>
-                        <strong>Carga Horária:</strong>40 horas
-                    </article>
+ <main>
+              <!-- Seção dos cursos -->
+              <section class="cursos">
+                    <h2>Nossos Cursos</h2>
 
-                    <article class="curso">
-                        <h3>Informática Básica</h3>
-                        <img src="../Images/InoformáticaBasica.jpg" alt="Informática Básica">
-                        <p>Domine o uso do computador e aplicativos essenciais.</p>
-                        <strong>Carga Horária:</strong>30 horas
-                    </article>
+                    <input id=""buscaCursos" placeholder="Buscar cursos...">
 
-                    <article class="curso">
-                        <h3>Jogos Digitais</h3>
-                        <img src="../Images/DesenvolvimentoJoogosDigitais.jpg" alt="Jogos Digitais">
-                        <p>Aprenda a desenvolver jogos digitais desde a modelagem até a programação.</p>
-                        <strong>Carga Horária:</strong>60 horas
-                    </article>
-            </section>
+                <div class="cursos-grid"> <!-- Container que o CSS usa pra montar o grid dos cursos -->
+                    <!-- O cursos.js VAI CONSTRUIR OS CARDS DOS CURSOS AQUI -->
+                     
+                </div>
+              </section>
+            
         </main>
         <!-- --------------------------- -->
-
+    
         <footer> <!-- RODAPÉ DO CORPO DOSITE -->
             <p>©2026 EduTech. Todos os direitos reservados.</p>
             <p><a href="contato.html">Entre em contato conosco</a></p>
         </footer>
+    <script src="../JS/Cursos.js"></script>
     </body>
 </html>
