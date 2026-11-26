@@ -20,12 +20,12 @@ let cursos = []; //Lista carregada do JSON
   3) FUNÇÃO PARA CARREGAR O JSON
   ========================================================== */
 
-function carregarCursos() {
+async function carregarCursos() {
     //busca o arquivo cursos.JSON (como se fosse uma MINI API)
-    const resposta = fetch("../DATA/cursos.JSON");
+    const resposta = await fetch("../DATA/cursos.JSON");
 
     // TRANSFOPRMA OS DADOS QUE O JS ENTENDE
-    cursos = resposta.json();
+    cursos = await resposta.JSON();
 
     //DEPOIS DE CARREGAR, RENDERIZA NA TELA
     renderizarCursos(cursos);
@@ -38,33 +38,26 @@ function carregarCursos() {
 function renderizarCursos(lista) {
     // Limpa o conteúdo antes de desenhar de novo
     ListaCursos.innerHTML = "";
-}
+
     //Para cada curso da lista, cria um card
-lista.forEach((curso) => {
-    //Cria um elemento HTML <div>
-    const card = document.createElement("div");
+  lista.forEach((curso) => {
+      //Cria um elemento HTML <div>
+      const card = document.createElement("div");
 
-    //Coloca uma classe (para o CSS estilizar)
-    card.classList.add("card-curso");
+      //Coloca uma classe (para o CSS estilizar)
+      card.classList.add("card-curso");
 
-    //Coloca o conteúdo do card de curso
-    card.innerHTML = `
-    <h3>${curso.titulo}</h3>
-    <imgsrc="${curso.img}">
-    <p>${curso.descricao}</p>
-    <p><strong>CH:</strong>${curso.cargaHoraria}h</p>
-    `
-
-    //Coloca o card dentro da lista de cursos
-    ListaCursos.appendChild(card);
-
-    //Evento do botão "Ver detalhes"
-    const btn = card.querySelector("#btn-detalhes");
-    btn.addEventListener("click", function(){
-        alert("Você escolheu: " + curso.titulo);
-    });
-});
-
+      //Coloca o conteúdo do card de curso
+      card.innerHTML = `
+      <a class="curso" href="../PAGES/detalhes-curso.html">
+        <h3>${curso.titulo}</h3>
+        <imgsrc="${curso.img}">
+        <p>${curso.descricao}</p>
+        <p><strong>CH:</strong>${curso.cargaHoraria}h</p>
+      </a>
+      `
+  });
+};
 
 /* ==========================================================
   5) BUSCA: FILTRAR A LISTA QUANDO DIGITAR
